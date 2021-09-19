@@ -24,7 +24,7 @@ app.use(session({
     secret : process.env.COOKIE_SECRET,
     cookie:{
         httpOnly : true,
-        secure : true,
+        secure : false,
     },
 }));
 app.use(flash());
@@ -37,7 +37,7 @@ app.use((req,res,next) => {
     next(err);
 });
 
-app.use((err,req,res)=>{
+app.use((err,req,res,next)=>{
     res.locals.message = err.message;
     res.locals.Error = req.app.get('env') === 'development' ? err : {};
     res.status(err.status || 500);
@@ -47,3 +47,4 @@ app.use((err,req,res)=>{
 app.listen(app.get('port'), () =>{
     console.log(app.get('port'), '빈 포트에서 대기 중');
 })
+
