@@ -1,0 +1,17 @@
+{
+  "name": "hapinotice",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^19.0.0",
+    "@hapi/inert": "^6.0.4",
+    "inert": "^4.2.1",
+    "nodemon": "^2.0.12"
+  }
+}
