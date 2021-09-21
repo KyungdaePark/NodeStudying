@@ -1,5 +1,5 @@
 'use strict';
-
+//
 const Hapi = require('@hapi/hapi');
 const Path = require('path');
 const Inert = require('@hapi/inert');
