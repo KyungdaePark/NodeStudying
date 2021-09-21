@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="login" method="GET"> <!-- method "GET" leaves information to URL using query-->
+        아이디 : <input type ="text" name="ID">
+        비번 : <input type = "password" name="PASSWORD">
+        <button type ="submit">로그인 with GET</button> 
+        <!-- button type = "submit" is sending between <form></form> and the destination is action tags URL-->
+    </form>
+
+    <form action="login" method="POST"> <!-- method "POST" leaves information to body of header-->
+        아이디 : <input type ="text" name="ID">
+        비번 : <input type = "password" name="PASSWORD">
+        <button type ="submit">로그인 with POST</button>
+    </form>
+</body>
+</html>
