@@ -53,13 +53,34 @@ const init = async () => {
         }
     })
 
-    server.route({ //2. using file handler option
-        method: 'GET',
-        path: '/hello.html',
-        handler:{
-            file: 'hello.html'
+    server.route({
+        method : 'GET',
+        path: '/login.html',
+        handler:(request, h) =>{
+            return h.file('login.html');
+            
         }
     })
+    
+    //here is the way how to request "GET" and "POST" method
+    server.route({ // 1. GET method from login.html
+        method : 'GET',
+        path: '/login', //http://localhost:3000/login?ID="{id}"&PASSWORD="{pw}"
+        handler:(request, h) =>{  
+            const information = request.query; //information has {"ID":"{id}","PASSWORD":"{pw}"}
+            return information; //you can also approximate "information.ID"
+        }
+    })
+
+    server.route({ // 2. POST method from login.html
+        method : 'POST',
+        path: '/login', //http://localhost:3000/login
+        handler:(request, h) =>{
+            const information = request.payload; //information is same as method get
+            return information; //you can also approximate "information.ID"
+        }
+    })
+   
 
     /////////////////////////////////////////////
 
