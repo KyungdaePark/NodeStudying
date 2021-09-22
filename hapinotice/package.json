@@ -2,7 +2,7 @@
   "name": "hapinotice",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +11,11 @@
   "dependencies": {
     "@hapi/hapi": "^19.0.0",
     "@hapi/inert": "^6.0.4",
+    "hapi-mongodb": "^10.0.1",
     "inert": "^4.2.1",
+    "mongo": "^0.1.0",
+    "mongodb": "^4.1.2",
+    "mongoose": "^6.0.7",
     "nodemon": "^2.0.12"
   }
 }
