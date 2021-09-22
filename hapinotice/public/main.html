@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="." method="POST">
+        <h2>로그인</h2>
+        <h3>아이디 <input type ="text" name="ID"> </h3>
+        <h3>비밀번호 <input type = "password" name="PASSWORD"></h3>
+        <button type ="submit">로그인</button> 
+    </form>
+    <form action="signup" method="POST" id="signup_form">
+        <h2>회원가입하기</h2>
+        <h3>아이디 <input type ="text" name="ID"></h3>
+        <h3>비밀번호 <input type = "password" name="PASSWORD" id="PASSWORD"></h3>
+    </form>
+        <h3>비밀번호 재입력 <input type = "password" id="PASSWORD_again"></h3>
+        <input type="button" onclick = "right()" value="회원가입"></button> 
+        <script type="text/javascript">
+            function right(){
+                const pw1 = document.getElementById('PASSWORD').value;
+                const pw2 = document.getElementById('PASSWORD_again').value;
+                if(pw1 != pw2){
+                    alert("비밀번호가 다릅니다");
+                    location.reload();
+                }
+                else{
+                    alert("비밀번호가 같습니다");
+                    document.getElementById('signup_form').submit();
+                }
+            }
+        </script>
+   
+</body>
+</html>
