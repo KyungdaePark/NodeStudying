@@ -42,10 +42,16 @@ const init = async () => {
         handler: async (req,h)  => {
             const login_data = req.payload;
             const id = await req.mongo.db.collection('members').findOne({"ID":login_data.ID});
-            if(id===null) return "Nothing";
+            console.log(login_data);
+            if(id==null) return "Nothing";
             else{
-                const next = await req.mongo.db.collection('members')
-                    .findOne({"ID":login_data.ID}, {"PASSWORD":login_data.PASSWORD});
+                const next = await req.mongo.db.collection('members').findOne({
+                    $and: [
+                        {"ID":login_data.ID}, 
+                        {"PASSWORD":login_data.PASSWORD}
+                    ]
+                });
+                console.log(login_data);
                 console.log(next);
                 if(next===null) return "ID OK PW NO";
                 else return "GREAT!";
